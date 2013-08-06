@@ -1,0 +1,25 @@
+<Alloy>
+	<Window class="container">
+		<Label id="firstDate" top="44" left="20">First date in take</Label>
+        <Button class="stepper" id="buttonMinus1" onClick="doClick1" title="-" top="40" left="205" />
+        <Button class="stepper" id="buttonPlus1" onClick="doClick2" title="+" top="40" left="255" />
+        
+        <Picker id="datePicker" top="90" selectionIndicator="true" type="Ti.UI.PICKER_TYPE_DATE"></Picker>
+        
+		<Label id="intakeDays" top="324" left="40">Days for the next in take</Label>
+		<Label id="days" top="330" left="165">2</Label>
+        <Button class="stepper" id="buttonMinus2" onClick="substractDays" title="-" top="330" left="205" />
+        <Button class="stepper" id="buttonPlus2" onClick="addDays" title="+" top="330" left="255" />
+        
+		<Label id="todayDate" top="375" left="10">Today is...</Label>
+		<Label id="isDay" top="370" left="184">OH, YES!</Label>
+		
+		<Label class="weekDay" id="Mon" left="4">Mon</Label>
+		<Label class="weekDay" id="Tue" left="49">Tue</Label>
+		<Label class="weekDay" id="Wed" left="94" color="#FFF" backgroundColor="#2E2EFE">Wed</Label>
+		<Label class="weekDay" id="Thu" left="139">Thu</Label>
+		<Label class="weekDay" id="Fri" left="184" color="#FFF" backgroundColor="#2E2EFE">Fri</Label>
+		<Label class="weekDay" id="Sat" left="229">Sat</Label>
+		<Label class="weekDay" id="Sun" left="274">Sun</Label>
+	</Window>
+</Alloy>
