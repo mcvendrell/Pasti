@@ -1,0 +1,30 @@
+"Label": {
+    left: 10,
+    color: '#555'
+},
+"TextField": {
+    left: 90,
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
+},
+"TextField[platform=android]": {
+    backgroundImage: '/dev/null'
+},
+"Button": {
+	width: 120,
+	height: 35
+},
+".container": {
+	backgroundColor: '#DDD'
+},
+"#txtName": {
+	width: 200,
+	maxLength: 30
+},
+"#txtDays": {
+	width: 40,
+	maxLength: 2,
+	keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
+},
+"#txtStart": {
+	width: 100
+}

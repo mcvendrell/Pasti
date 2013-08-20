@@ -1,6 +1,3 @@
-".container": {
-	backgroundColor: "#DDD"
-},
 "Label": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
@@ -16,11 +13,8 @@
 	backgroundColor:'#CCC',
   	borderRadius: 5
 },
-".stepper": {
-	width: 50,
-	height: 30,
-  	borderRadius: 0,
-  	borderWidth: 0
+".container": {
+	backgroundColor: "#DDD"
 },
 ".weekDay": {
 	top: 414,
@@ -29,23 +23,4 @@
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	backgroundColor:'#BBB',
   	borderRadius: 21
-},
-"#firstDate": {
-  	width: 170,
-  	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
-},
-"#intakeDays": {
-  	width: 120,
-  	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
-},
-"#days": {
-  	width: 30,
-  	font: { fontSize: "25sp"},
-  	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
-},
-"#isDay": {
-  	width: 132,
-  	height: 30,
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-  	borderRadius: 15
 }

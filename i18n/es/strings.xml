@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="Your_pills">Tus pastillas</string>
+    <string name="add_pill">Añadir Pastilla</string>
+    <string name="pill_name">Nombre</string>
+    <string name="days">Días</string>
+    <string name="start_on">Empieza</string>
+    <string name="add">Añadir</string>
+    <string name="fill_all_fields">Por favor, rellene todos los campos.</string>
+</resources>

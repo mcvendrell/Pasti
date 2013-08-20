@@ -10,4 +10,5 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+Alloy.Globals.dbname = "pastis";
 Alloy.Globals.blueColor = "#2E2EFE";

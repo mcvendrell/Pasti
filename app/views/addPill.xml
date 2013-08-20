@@ -1,0 +1,14 @@
+<Alloy>
+	<Window id="win" class="container" title="L('add_pill')">
+		<Label id="lblName" top="40" text="L('pill_name')" />
+		<TextField id="txtName" top="37"/>
+		
+		<Label id="lblDays" top="80" text="L('days')" />
+		<TextField id="txtDays" top="77"></TextField>
+		
+		<Label id="lblStart" top="120" text="L('start_on')" />
+		<TextField id="txtStart" top="117"/>
+		
+		<Button id="btnSubmit" top="170" title="L('add')" onClick="submitForm" />
+    </Window>
+</Alloy>

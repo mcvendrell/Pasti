@@ -1,5 +1,19 @@
 <Alloy>
-	<Window id="startWindow" class="container">
-		<Label id="firstDate" top="44" left="20">First date in take</Label>
-	</Window>
+	<Window>
+        <NavigationGroup id="navBar" platform="ios">
+            <Window id="pillsList" class="container" title="L('your_pills')">
+				<View id="listContainer">
+	    		    <Require src="listPills"/>
+			    </View>
+            </Window>
+        </NavigationGroup>
+        
+        <View id="navBar" platform="android">
+	        <Require src="fakeNavBar" />
+	        
+			<View id="listContainer" top="44">
+    		    <Require src="listPills"/>
+		    </View>
+	    </View>
+    </Window>
 </Alloy>

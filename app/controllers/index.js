@@ -5,40 +5,26 @@
  * know if today is a day for intake or not, for each pill
  */
 
-// Our database
-//var db = Titanium.Database.open('pills');
-var db = Titanium.Database.install('/data/pastis', 'pastis');
-
-// On every start, if database don't exists, create it	
-//db.execute('CREATE TABLE IF NOT EXISTS pills (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, first_take TEXT, interval INTEGER)');
+// Add the add button for iOS
+if (OS_IOS) {
+    // Create the iOS button with the proper style
+    var btnAdd = Ti.UI.createButton({
+		systemButton: Ti.UI.iPhone.SystemButton.ADD
+	});
 	
-//db.execute('INSERT INTO DATABASETEST (ID, NAME ) VALUES(?,?)',4,'Name 4');
-//db.execute('UPDATE DATABASETEST SET NAME = "I was updated too" WHERE ID = 2');
-//Titanium.API.info('JUST INSERTED, rowsAffected = ' + db.rowsAffected);
-//Titanium.API.info('JUST INSERTED, lastInsertRowId = ' + db.lastInsertRowId);
-
-// Get all the pills
-var pills = db.execute('SELECT * FROM pills ORDER BY id');
-Titanium.API.info('ROW COUNT = ' + pills.getRowCount());
-
-while (pills.isValidRow()) {
-	Titanium.API.info('ID: ' + pills.field(0) + ' NAME: ' + pills.fieldByName('name') + ' FIRST: ' + pills.fieldByName('first_take') + ' INT: ' + pills.fieldByName('interval'));
-	$.table.appendRow('Elemento')
-	pills.next();
+	// Add the action to the button
+	btnAdd.addEventListener('click', function()
+	{
+		// Get the add pill controller
+		var winAddPill = Alloy.createController('addPill').getView();
+		// Save a reference to the navBar, we will need it to autoclose the new window on add button click 
+		winAddPill.navBar = $.navBar;
+		// Open the new view in the nav bar
+		$.navBar.open(winAddPill, {animated : true});
+	});
+	
+	// Add the button to the nav bar
+	$.pillsList.setRightNavButton(btnAdd);
 }
-pills.close();
-// Always close db when you're done to save resources
-db.close();
 
 $.index.open();
-
-//
-// INITIALIZERS
-//
-// add the add button, this can be refactored
-if (Ti.Platform.osname === 'iphone') {
-    $.add.style = Titanium.UI.iPhone.SystemButtonStyle.PLAIN;
-    //$.add.addEventListener('click', addNewFugitive);
-    $.startWindow.setRightNavButton($.add);
-}
-
