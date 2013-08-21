@@ -1,7 +1,7 @@
 <Alloy>
-	<Window>
+	<Window class="container">
         <NavigationGroup id="navBar" platform="ios">
-            <Window id="pillsList" class="container" title="L('your_pills')">
+            <Window id="pillsList" title="L('your_pills')">
 				<View id="listContainer">
 	    		    <Require src="listPills"/>
 			    </View>

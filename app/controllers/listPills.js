@@ -17,7 +17,12 @@ var populateList = function() {
 		Titanium.API.info('ID: ' + pills.field(0) + ' NAME: ' + pills.fieldByName('name') + ' FIRST: ' + pills.fieldByName('first_take') + ' INT: ' + pills.fieldByName('interval'));
 		
 		// Simple way to add a row (only one text field)
-		data.push(Ti.UI.createTableViewRow({title: pills.fieldByName('name')}));
+		data.push(
+			Ti.UI.createTableViewRow({
+				title: pills.fieldByName('name'),
+				color: 'black'
+			})
+		);
 		
 		// Custom way to add a row
 		// var row = Ti.UI.createTableViewRow({

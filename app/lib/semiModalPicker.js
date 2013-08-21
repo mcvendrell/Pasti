@@ -14,7 +14,7 @@ var dateToString = function(date) {
 exports.semiModalPicker = function(o) {
 	var type = o.type === undefined ? Ti.UI.PICKER_TYPE_PLAIN : o.type;
 	var modalWin = Ti.UI.createWindow({
-		backgroundColor:'transparent'
+		backgroundColor: 'transparent'
 	});
 	var overlay = Ti.UI.createView({
 		backgroundColor: '#000',
@@ -40,18 +40,18 @@ exports.semiModalPicker = function(o) {
 	}
 	picker.addEventListener('change', function(e) {});
 
-	var cancel =  Titanium.UI.createButton({
+	var cancel = Titanium.UI.createButton({
 		title:'Cancel',
 		height: 30,
 		width: 80,
-		style:Titanium.UI.iPhone.SystemButtonStyle.BORDERED,
+		style: Titanium.UI.iPhone.SystemButtonStyle.BORDERED,
 		left: 10
 	});
 	cancel.addEventListener('click', function(e) {
 		modalWin.close();
 	});
 
-	var done =  Titanium.UI.createButton({
+	var done = Titanium.UI.createButton({
 		title:'Done',
 		height: 30,
 		width: 80,
@@ -68,7 +68,7 @@ exports.semiModalPicker = function(o) {
 		modalWin.close();
 	});
 
-	var spacer =  Titanium.UI.createButton({
+	var spacer = Titanium.UI.createButton({
 		systemButton:Titanium.UI.iPhone.SystemButton.FLEXIBLE_SPACE
 	});
 
@@ -76,7 +76,6 @@ exports.semiModalPicker = function(o) {
 		height: 43,
 		backgroundColor: '#bbb'
 	});
-
 
 	toolbar.add(cancel);
 	toolbar.add(done);

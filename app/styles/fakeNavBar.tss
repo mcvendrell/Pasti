@@ -1,6 +1,6 @@
 "#navView": {
 	height: 44,
-	backgroundColor: '#DDD'
+	backgroundColor: '#BBB'
 },
 "#lblTitle": {
 	color: 'black',
@@ -9,8 +9,8 @@
 		fontWeight: 'bold'
 	}
 },
-"#addPill": {
+"#btnAddPill": {
 	right: 5,
-	width: 30,
-	height: 30
+	width: 36,
+	height: 36
 }

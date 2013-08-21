@@ -1,6 +1,6 @@
 <Alloy>
 	<View id="navView" top="0">
 		<Label id="lblTitle" text="L('your_pills')" />
-		<Button id="addPill" title="+" onClick="addItem" />
+		<Button id="btnAddPill" top="5" title="+" onClick="addItem" />
 	</View>
 </Alloy>

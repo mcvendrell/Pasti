@@ -1,14 +1,31 @@
 <Alloy>
-	<Window id="win" class="container" title="L('add_pill')">
-		<Label id="lblName" top="40" text="L('pill_name')" />
-		<TextField id="txtName" top="37"/>
+	<Window id="win" class="container" title="L('add_pill')" platform="ios">
+		<Label id="lblName" class="label" top="40" text="L('pill_name')" />
+		<TextField id="txtName" top="37" />
 		
-		<Label id="lblDays" top="80" text="L('days')" />
-		<TextField id="txtDays" top="77"></TextField>
+		<Label id="lblDays" class="label" top="80" text="L('days')" />
+		<TextField id="txtDays" top="77" />
 		
-		<Label id="lblStart" top="120" text="L('start_on')" />
-		<TextField id="txtStart" top="117"/>
+		<Label id="lblStart" class="label" top="120" text="L('start_on')" />
+		<TextField id="txtStart" top="117" platform="ios" />
 		
-		<Button id="btnSubmit" top="170" title="L('add')" onClick="submitForm" />
+		<Button id="btnSubmit" class="formButton" top="170" title="L('add')" onClick="submitForm" />
+    </Window>
+	<Window id="win" class="container" title="L('add_pill')" platform="android">
+		<View id="navView" top="0">
+			<Button id="btnBack" top="5" title="L('back')" onClick="goBack" />
+			<Label id="lblTitle" text="L('add_pill')" />
+		</View>
+
+		<Label id="lblName" class="label" top="65" text="L('pill_name')" />
+		<TextField id="txtName" top="53" />
+		
+		<Label id="lblDays" class="label" top="110" text="L('days')" />
+		<TextField id="txtDays" top="98" />
+		
+		<Label id="lblStart" class="label" top="151" text="L('start_on')" />
+		<Picker id="pikStart" top="176" type="Ti.UI.PICKER_TYPE_DATE" />
+		
+		<Button id="btnSubmit" class="formButton" top="325" title="L('add')" onClick="submitForm" />
     </Window>
 </Alloy>

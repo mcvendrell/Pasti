@@ -1,20 +1,37 @@
-"Label": {
-    left: 10,
-    color: '#555'
-},
 "TextField": {
     left: 90,
     borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
 },
-"TextField[platform=android]": {
-    backgroundImage: '/dev/null'
+".container": {
+	backgroundColor: '#DDD'
 },
-"Button": {
+".label": {
+    left: 10,
+    color: '#555'
+},
+".formButton": {
 	width: 120,
 	height: 35
 },
-".container": {
-	backgroundColor: '#DDD'
+"#navView[platform=android]": {
+	height: 44,
+	backgroundColor: '#BBB'
+},
+"#btnBack[platform=android]": {
+	left: 5,
+	width: Ti.UI.SIZE,
+	height: 36,
+	font: {
+		fontSize: 14
+	}
+},
+"#lblTitle[platform=android]": {
+	color: 'black',
+	font: {
+		fontSize: 20,
+		fontWeight: 'bold'
+	},
+	textAlign: 'center'
 },
 "#txtName": {
 	width: 200,

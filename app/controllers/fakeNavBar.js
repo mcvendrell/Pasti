@@ -4,4 +4,3 @@ function addItem() {
 	var winAddPill = Alloy.createController('addPill').getView();
 	winAddPill.open();
 }
-

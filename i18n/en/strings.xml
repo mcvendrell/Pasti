@@ -2,6 +2,7 @@
 <resources>
     <string name="your_pills">Your Pills</string>
     <string name="add_pill">Add Pill</string>
+    <string name="back">Back</string>
     <string name="pill_name">Pill name</string>
     <string name="days">Days</string>
     <string name="start_on">Start on</string>

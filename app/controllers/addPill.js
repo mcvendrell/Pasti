@@ -21,11 +21,25 @@ function setupPickerTextField(textField, pickerType, data) {
 	});
 };
 
+// Action when button back is clicked (Android only)
+function goBack() {
+	// Close this window
+	$.win.close();
+}
+
 // Action for the button
 function submitForm() {
 	var name = $.txtName.value;
 	var days = $.txtDays.value;
-	var start = $.txtStart.value;
+	if (OS_IOS) {
+		var start = $.txtStart.value;
+	} else {
+		var start = $.pikStart.value;
+		if (start != '') {
+			utils = require('utils');
+			start = utils.dateToString(start);
+		}
+	}
 	
 	// All fields must be filled
     if (name == '' || days == '' || start == '' ) {
