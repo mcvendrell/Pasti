@@ -23,11 +23,6 @@
 		<Label class="weekDay" id="Sun" left="274">Sun</Label>
 	</Window>
 	<Window id="winPill" class="container" platform="android">
-		<View id="navView" top="0">
-			<Button id="btnBack" top="5" title="L('back')" onClick="goBack" />
-			<Label id="lblTitle" />
-		</View>
-        
         <Picker id="datePicker" top="120" selectionIndicator="true" type="Ti.UI.PICKER_TYPE_DATE"></Picker>
         
 		<Label id="intakeDays" top="279" left="40">Days for the next in take</Label>

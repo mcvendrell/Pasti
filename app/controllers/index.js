@@ -9,11 +9,6 @@
 //var NavigationController = require('navigator');
 //var navController = new NavigationController();
 
-// Action when button add is clicked
-function clickAddItem() {
-	alert('Add Item');
-}
-
 /*
 // Add the add button for Android (if possible)
 if (OS_ANDROID) {
@@ -40,9 +35,14 @@ if (OS_ANDROID) {
     });
 }
 */
-
-// Add the add button for iOS
+/*
+// Add the stuff for iOS:
+// - add a reference for the navBar for use in other controllers
+// - add button for iOS
 if (OS_IOS) {
+	// Save a reference to the navBar, we will need it in many controllers 
+	Alloy.Globals.navBar = $.navBar;
+	
     // Create the iOS button with the proper style
     var btnAdd = Ti.UI.createButton({
 		systemButton: Ti.UI.iPhone.SystemButton.ADD
@@ -53,11 +53,8 @@ if (OS_IOS) {
 	{
 		// Get the add pill controller
 		var winAddPill = Alloy.createController('addPill').getView();
-		// Save a reference to the navBar, we will need it to autoclose the new window on add button click 
-		winAddPill.navBar = $.navBar;
-		//winAddPill.navBar = navController;
 		// Open the new view in the nav bar
-		$.navBar.open(winAddPill, {animated : true});
+		$.navBar.open(winAddPill, {animated: true});
 		//navController.open(winAddPill);
 	});
 	
@@ -67,3 +64,36 @@ if (OS_IOS) {
 
 $.index.open();
 //navController.open($.pillsList);
+*/
+
+// Use our own navigator for iOS and Android, in order to use, for iOS, the
+// native NavigationGroup, and for Android, a custom Navigation controller
+var ui = require('navigation');
+var nav = ui.createNavigatorGroup();
+
+Alloy.Globals.navBar = nav;
+
+
+if (OS_IOS) {
+	// Create the iOS button with the proper style
+	var btnAdd = Ti.UI.createButton({
+		systemButton: Ti.UI.iPhone.SystemButton.ADD
+	});
+} else {
+	var btnAdd = Ti.UI.createButton({
+        title: "+"
+   });
+}
+// Attach button to navBar
+nav.setRightButton($.pillsList, btnAdd);
+
+// Add the action to the button
+btnAdd.addEventListener('click', function()
+{
+	// Get the add pill controller
+	var winAddPill = Alloy.createController('addPill').getView();
+	// Open the new view in the nav bar
+	nav.open(winAddPill, {animated: true});
+});
+
+nav.open($.pillsList);

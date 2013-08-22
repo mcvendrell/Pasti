@@ -1,19 +1,7 @@
 <Alloy>
-	<Window class="container">
-        <NavigationGroup id="navBar" platform="ios">
-            <Window id="pillsList" title="L('your_pills')">
-				<View id="listContainer">
-	    		    <Require src="listPills"/>
-			    </View>
-            </Window>
-        </NavigationGroup>
-        
-        <View id="navBar" platform="android">
-	        <Require src="fakeNavBar" />
-	        
-			<View id="listContainer" top="44">
-    		    <Require src="listPills"/>
-		    </View>
+    <Window id="pillsList" class="container" title="L('your_pills')">
+		<View id="listContainer">
+		    <Require src="listPills" />
 	    </View>
     </Window>
 </Alloy>

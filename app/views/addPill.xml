@@ -12,11 +12,6 @@
 		<Button id="btnSubmit" class="formButton" top="170" title="L('add')" onClick="submitForm" />
     </Window>
 	<Window id="win" class="container" title="L('add_pill')" platform="android">
-		<View id="navView" top="0">
-			<Button id="btnBack" top="5" title="L('back')" onClick="goBack" />
-			<Label id="lblTitle" text="L('add_pill')" />
-		</View>
-
 		<Label id="lblName" class="label" top="65" text="L('pill_name')" />
 		<TextField id="txtName" top="53" />
 		
