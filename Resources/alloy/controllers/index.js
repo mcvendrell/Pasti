@@ -1,42 +1,42 @@
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
+    this.__controllerPath = "index";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
     arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    $.__views.startWindow = Ti.UI.createWindow({
-        backgroundColor: "#DDD",
-        id: "startWindow"
+    $.__views.pillsList = Ti.UI.createWindow({
+        id: "pillsList",
+        title: L("your_pills")
     });
-    $.__views.startWindow && $.addTopLevelView($.__views.startWindow);
-    $.__views.firstDate = Ti.UI.createLabel({
-        width: 170,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-        text: "First date in take",
-        id: "firstDate",
-        top: "44",
-        left: "20"
+    $.__views.pillsList && $.addTopLevelView($.__views.pillsList);
+    $.__views.listContainer = Ti.UI.createView({
+        id: "listContainer"
     });
-    $.__views.startWindow.add($.__views.firstDate);
+    $.__views.pillsList.add($.__views.listContainer);
+    $.__views.__alloyId1 = Alloy.createController("listPills", {
+        id: "__alloyId1",
+        __parentSymbol: $.__views.listContainer
+    });
+    $.__views.__alloyId1.setParent($.__views.listContainer);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var db = Titanium.Database.install("/data/pastis", "pastis");
-    var pills = db.execute("SELECT * FROM pills ORDER BY id");
-    Titanium.API.info("ROW COUNT = " + pills.getRowCount());
-    while (pills.isValidRow()) {
-        Titanium.API.info("ID: " + pills.field(0) + " NAME: " + pills.fieldByName("name") + " FIRST: " + pills.fieldByName("first_take") + " INT: " + pills.fieldByName("interval"));
-        $.table.appendRow("Elemento");
-        pills.next();
-    }
-    pills.close();
-    db.close();
-    $.index.open();
-    if ("iphone" === Ti.Platform.osname) {
-        $.add.style = Titanium.UI.iPhone.SystemButtonStyle.PLAIN;
-        $.startWindow.setRightNavButton($.add);
-    }
+    var ui = require("navigation");
+    var nav = ui.createNavigatorGroup();
+    Alloy.Globals.navBar = nav;
+    var btnAdd;
+    var btnAdd = Ti.UI.createButton({
+        title: "+"
+    });
+    nav.setRightButton($.pillsList, btnAdd);
+    btnAdd.addEventListener("click", function() {
+        var winAddPill = Alloy.createController("addPill").getView();
+        nav.open(winAddPill, {
+            animated: true
+        });
+    });
+    nav.open($.pillsList);
     _.extend($, exports);
 }
 
