@@ -23,12 +23,33 @@
   	borderWidth: 0
 },
 ".weekDay": {
-	top: 414,
+	top: 370,
 	width: 42,
 	height: 42,
+  	font: { fontSize: "15sp"},
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	backgroundColor:'#BBB',
   	borderRadius: 21
+},
+"#navView[platform=android]": {
+	height: 44,
+	backgroundColor: '#BBB'
+},
+"#btnBack[platform=android]": {
+	left: 5,
+	width: Ti.UI.SIZE,
+	height: 36,
+	font: {
+		fontSize: 14
+	}
+},
+"#lblTitle[platform=android]": {
+	color: 'black',
+	font: {
+		fontSize: 20,
+		fontWeight: 'bold'
+	},
+	textAlign: 'center'
 },
 "#firstDate": {
   	width: 170,

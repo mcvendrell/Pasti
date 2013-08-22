@@ -45,17 +45,14 @@ function submitForm() {
     if (name == '' || days == '' || start == '' ) {
         alert(L("fill_all_fields"));
     } else {
-    	// Refresh the data on the listPills view
-    	var Alloy = require('alloy');
-    	var db = Ti.Database.open(Alloy.Globals.dbname);
-    	db.execute("INSERT INTO pills (name, first_take, interval) VALUES (?,?,?)", name, start, days);
-    	
-    	// Refresh the main screen with the new data
-    	Alloy.Globals.refreshPills();
+    	// Save data
+		var db = require('db');
+		// Add will fire auto-refresh event inside
+		db.addPill(name, start, days);			
     	
 		if (OS_IOS) {
-			// on iOS we are on a navBar
-	    	$.win.navBar.close($.win);
+			// On iOS we are on a navBar
+	    	Alloy.Globals.navBar.close($.win);
 		} else {
 			// On Android we only opened a new window, just close it
 			$.win.close();

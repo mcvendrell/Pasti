@@ -1,5 +1,11 @@
 var diasDeSalto = 1;
 
+// Action when button back is clicked (Android only)
+function goBack() {
+	// Close this window
+	$.winPill.close();
+}
+
 function doClick1(e) {  
     alert("Restando!");
 }
@@ -25,4 +31,4 @@ function addDays(e) {
 }
 
 $.days.text = diasDeSalto;
-$.index.open();
+//$.winPill.open();
