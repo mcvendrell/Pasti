@@ -10,5 +10,13 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+// Database name
 Alloy.Globals.dbname = "pastis";
+
+// Colors for Style Sheets
+Alloy.Globals.winBgColor = "#DDD";
+Alloy.Globals.navBgColor = "#BBB";
+Alloy.Globals.navTitleColor = "black";
 Alloy.Globals.blueColor = "#2E2EFE";
+Alloy.Globals.greyColor = "#BBB";
+Alloy.Globals.formLabelColor = "#555";

@@ -1,24 +1,20 @@
 ".container": {
-	backgroundColor: "#DDD"
+	backgroundColor: Alloy.Globals.winBgColor
 },
 "Label": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
-	color: "#000"
+	color: "black"
 },
-"#label3": {
-	top: 40,
-	left: 10,
-  	right: 10,
-  	width: Ti.UI.FILL,
-	height: Ti.UI.SIZE,
-	color: "#F00",
-	backgroundColor:'#CCC',
-  	borderRadius: 5
-},
-".stepper": {
+".stepper[platform=ios]": {
 	width: 50,
 	height: 30,
+  	borderRadius: 0,
+  	borderWidth: 0
+},
+".stepper[platform=android]": {
+	width: 50,
+	height: 40,
   	borderRadius: 0,
   	borderWidth: 0
 },
@@ -28,12 +24,12 @@
 	height: 42,
   	font: { fontSize: "15sp"},
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	backgroundColor:'#BBB',
+	backgroundColor: Alloy.Globals.greyColor,
   	borderRadius: 21
 },
 "#navView[platform=android]": {
 	height: 44,
-	backgroundColor: '#BBB'
+	backgroundColor: Alloy.Globals.navBgColor
 },
 "#btnBack[platform=android]": {
 	left: 5,
@@ -44,7 +40,7 @@
 	}
 },
 "#lblTitle[platform=android]": {
-	color: 'black',
+	color: Alloy.Globals.navColor,
 	font: {
 		fontSize: 20,
 		fontWeight: 'bold'
@@ -64,8 +60,13 @@
   	font: { fontSize: "25sp"},
   	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 },
+"#todayDate": {
+  	width: 185,
+  	font: { fontSize: "14sp"},
+  	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+},
 "#isDay": {
-  	width: 132,
+  	width: 120,
   	height: 30,
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
   	borderRadius: 15

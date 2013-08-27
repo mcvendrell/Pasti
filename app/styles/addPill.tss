@@ -3,11 +3,11 @@
     borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
 },
 ".container": {
-	backgroundColor: '#DDD'
+	backgroundColor: Alloy.Globals.winBgColor
 },
 ".label": {
     left: 10,
-    color: '#555'
+    color: Alloy.Globals.formLabelColor
 },
 ".formButton": {
 	width: 120,
@@ -15,7 +15,7 @@
 },
 "#navView[platform=android]": {
 	height: 44,
-	backgroundColor: '#BBB'
+	backgroundColor: Alloy.Globals.navBgColor
 },
 "#btnBack[platform=android]": {
 	left: 5,
@@ -26,7 +26,7 @@
 	}
 },
 "#lblTitle[platform=android]": {
-	color: 'black',
+	color: Alloy.Globals.navTitleColor,
 	font: {
 		fontSize: 20,
 		fontWeight: 'bold'

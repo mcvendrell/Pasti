@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+    <string name="general_info">¿Te tienes que tomar una medicina cada ciertos días y nunca recuerdas si te toca hoy?
+
+Pasti te ayuda a recordar qué días de la semana te toca tomar tu medicina. Solo tienes que indicar qué día empezaste a tomar la medicina y cada cuántos días tienes que tomarla y ¡ya está!
+No se añaden datos al calendario ni a los recordatorios, es una aplicación solo para consulta.
+
+Creada por Manuel Conde Vendrell para su propio uso, pero quizá pueda ayudarte.</string>
     <string name="Your_pills">Tus pastillas</string>
     <string name="add_pill">Añadir Pastilla</string>
+    
     <string name="back">Volver</string>
     <string name="pill_name">Nombre</string>
     <string name="days">Días</string>
     <string name="start_on">Empieza</string>
     <string name="add">Añadir</string>
     <string name="fill_all_fields">Por favor, rellene todos los campos.</string>
+    
+    <string name="first_day_take">Primer día de toma</string>
+    <string name="days_for_next_take">Días para la próxima toma</string>
+    <string name="today_is">Hoy</string>
+	<string name="is_day">Hoy TOCA</string>
+	<string name="is_not_day">Noy no toca</string>
+    
+	<string name="Sunday">Domingo</string>
+	<string name="Monday">Lunes</string>
+	<string name="Tuesday">Martes</string>
+	<string name="Wednesday">Miércoles</string>
+	<string name="Thursday">Jueves</string>
+	<string name="Friday">Viernes</string>
+	<string name="Saturday">Sábado</string>
+	<string name="Sun">Dom</string>
+	<string name="Mon">Lun</string>
+	<string name="Tue">Mar</string>
+	<string name="Wed">Mie</string>
+	<string name="Thu">Jue</string>
+	<string name="Fri">Vie</string>
+	<string name="Sat">Sab</string>
+	<string name="January">Enero</string>
+	<string name="February">Febrero</string>
+	<string name="March">Marzo</string>
+	<string name="April">Abril</string>
+	<string name="May">Mayo</string>
+	<string name="June">Junio</string>
+	<string name="July">Julio</string>
+	<string name="August">Agosto</string>
+	<string name="September">Septiembre</string>
+	<string name="October">Octubre</string>
+	<string name="November">Noviembre</string>
+	<string name="December">Diciembre</string>
 </resources>

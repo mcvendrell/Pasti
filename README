@@ -15,14 +15,15 @@ Will cover the next aspects:
 - CommonJS (in the lib folder we will have our own controllers to be available to all the program).
 - Internacionalization (translation to EN and ES).
 - iOS / Android working versions. 
-- Use of next "complex" components: 
+- Use of the next "complex" components: 
 	TableView
 	NavigationGroup (for iOS)
-	custom NavigationBar (for Android 2.3.3+) inside a View
+	custom NavigationBar (for Android) inside a View
 	Forms (with different DatePicker for iOS and Android)
 
 Codestrong!
 
+----------------------------------
 Now, the purpose of the program.
 
 I must take some different pills on my current life, but not daily, one can be taken every 2 days, other can be every 3 days, etc. Usually I remember it, because is every 2 days, but sometimes I forget if I took the pill yesterday. Then I need a way to remember it.

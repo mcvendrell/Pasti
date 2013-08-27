@@ -61,10 +61,12 @@ exports.createNavigatorGroup = function() {
                 color: 'black'
             }));
 			
+			/*
 			// For second or more views, add a back button
             if (navViews.length >= 2) {
                 var button = Ti.UI.createButton({
-                    title: '< ' + navViews[navViews.length - 2].win.title
+                    //title: '< ' + navViews[navViews.length - 2].win.title
+                    title: '< ' + L('back')
                 });
                 me.addLeftButton(win, button);
                 
@@ -73,6 +75,7 @@ exports.createNavigatorGroup = function() {
                     win.close();
                 });
             }
+            */
 
             navView.win = win;
             win.add(navView);

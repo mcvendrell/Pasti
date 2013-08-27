@@ -36,8 +36,8 @@ function submitForm() {
 	} else {
 		var start = $.pikStart.value;
 		if (start != '') {
-			utils = require('utils');
-			start = utils.dateToString(start);
+			ut = require('util');
+			start = ut.dateToString(start);
 		}
 	}
 	

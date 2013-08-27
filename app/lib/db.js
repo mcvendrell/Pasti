@@ -27,7 +27,9 @@ exports.getPills = function() {
 			// Add actual db fields
 			name: result.fieldByName("name"),
 			first: result.fieldByName("first_take"),
-			interval: result.fieldByName("interval")
+			interval: result.fieldByName("interval"),
+			// Config
+			color: 'black'
 		});
 		
 		// Custom way to add a row

@@ -12,13 +12,11 @@ Ti.App.addEventListener('dbUpdated', populateData);
 // Add a click event to the rows
 $.table.addEventListener('click', function(e) {
 	// Get the pill controller
-	var winPill = Alloy.createController('pill').getView();
-	if (OS_IOS) {
-		// Open the new view in the nav bar
-		Alloy.Globals.navBar.open(winPill, {animated: true});
-	} else {
-		winPill.open();
-	}
+    //Ti.API.info('Row: ' + e.rowData.id);
+
+	var winPill = Alloy.createController('pill', e.rowData).getView();
+	// Open the new view in the nav bar
+	Alloy.Globals.navBar.open(winPill, {animated: true});
 });
 
 // On load, make an initial query

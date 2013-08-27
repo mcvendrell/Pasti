@@ -1,3 +1,6 @@
+/*
+ * Another option for custom Navigation Controller, actually not used in the project
+ */
 NavigationController = function() {
 	this.windowStack = [];
 };

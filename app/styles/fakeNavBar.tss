@@ -1,9 +1,9 @@
 "#navView": {
 	height: 44,
-	backgroundColor: '#BBB'
+	backgroundColor: Alloy.Globals.navBgColor
 },
 "#lblTitle": {
-	color: 'black',
+	color: Alloy.Globals.navTitleColor,
 	font: {
 		fontSize: 20,
 		fontWeight: 'bold'

@@ -75,19 +75,33 @@ Alloy.Globals.navBar = nav;
 
 
 if (OS_IOS) {
-	// Create the iOS button with the proper style
+	// Create the iOS buttons with the proper style
+	var btnInfo = Ti.UI.createButton({
+		systemButton: Ti.UI.iPhone.SystemButton.INFO_DARK
+	});
 	var btnAdd = Ti.UI.createButton({
 		systemButton: Ti.UI.iPhone.SystemButton.ADD
 	});
 } else {
+	// Create the Android buttons with the proper text
+	var btnInfo = Ti.UI.createButton({
+		title: "i",
+		borderRadius: 25
+	});
 	var btnAdd = Ti.UI.createButton({
-        title: "+"
-   });
+		title: "+"
+	});
 }
-// Attach button to navBar
+// Attach buttons to navBar
+nav.setLeftButton($.pillsList, btnInfo);
 nav.setRightButton($.pillsList, btnAdd);
 
-// Add the action to the button
+// Add the action to the buttons
+btnInfo.addEventListener('click', function()
+{
+	// Show the info
+	alert(L("general_info"));
+});
 btnAdd.addEventListener('click', function()
 {
 	// Get the add pill controller
