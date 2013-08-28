@@ -7,17 +7,47 @@ var firstDay = util.stringToDate(args.first);
 var intervalDays = parseInt(args.interval);
 var today = new Date();
 
+
+// Add a the delete button
+var btnDel = Ti.UI.createButton({
+	title: "Delete"
+});
+Alloy.Globals.navBar.setRightButton($.winPill, btnDel);
+
+// Add the action to the delete button
+btnDel.addEventListener('click', function() {
+	// Del function will fire auto-refresh event inside
+	var db = require('db');
+	db.delPill(args.id);
+	// Autoclose this win
+	Alloy.Globals.navBar.close($.winPill);
+});
+
+
 // Change the first day (from stepper buttons or in the picker directly)
 function changeFirstDay(e) {
 	if (e.source.id == "btnSubFirst") {
 	    firstDay.setDate(firstDay.getDate() - 1);
+		$.dtPicker.value = firstDay;
+    	refreshInterface();
 	} else if (e.source.id == "btnAddFirst") {
 	    firstDay.setDate(firstDay.getDate() + 1);
+		$.dtPicker.value = firstDay;
+    	refreshInterface();
 	} else if (e.source.id == "dtPicker") {
-		firstDay= $.dtPicker.value;
+		// With Android emulator there is not enough time to update
+		// the interface (too slow?), so we must give some time to the 
+		// system to get the new data
+		if (OS_ANDROID) {
+			setTimeout(function(){
+				firstDay = e.source.value;
+				refreshInterface();
+				}, 200);
+		} else {
+			firstDay = e.source.value;
+			refreshInterface();
+		}
 	}
-	$.dtPicker.value = firstDay;
-    refreshInterface();
 }
 
 // Change the interval for the next take (from stepper buttons)
@@ -52,7 +82,7 @@ function refreshInterface() {
 	brain.calculateWeek(firstDay, intervalDays);
 	
 	//Ti.API.info('Week config: ' + brain.week);
-	
+		
 	// Is today a take day?
 	$.isDay.text = (brain.take ? L("is_day") : L("is_not_day"));
 	setDayStatus($.isDay, brain.take);

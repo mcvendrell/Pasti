@@ -11,9 +11,9 @@ Ti.App.addEventListener('dbUpdated', populateData);
 
 // Add a click event to the rows
 $.table.addEventListener('click', function(e) {
-	// Get the pill controller
     //Ti.API.info('Row: ' + e.rowData.id);
 
+	// Get the pill controller and pass the row data as args
 	var winPill = Alloy.createController('pill', e.rowData).getView();
 	// Open the new view in the nav bar
 	Alloy.Globals.navBar.open(winPill, {animated: true});

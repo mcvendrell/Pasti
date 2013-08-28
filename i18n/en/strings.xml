@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="general_info">Do you have to take a medicine every N days and never remember if it is today?
-
-Pasti helps you to remember which week days you must to take your medicine. Just indicate what day you started taking the medicine and every how many days you have to take it, and you are done!
-No data is added to the calendar or reminders, is an application for consultation only.
-
-Created by Manuel Conde Vendrell for his own purposes, but maybe can help you.</string>
+    <string name="general_info">Do you have to take a medicine every N days and never remember if it is today?\n\nPasti helps you to remember which week days you must to take your medicine. Just indicate what day you started taking the medicine and every how many days you have to take it, and you are done!\nNo data is added to the calendar or reminders, is an application for consultation only.\n\nCreated by Manuel Conde Vendrell for his own purposes, but maybe can help you.</string>
     <string name="your_pills">Your Pills</string>
     <string name="add_pill">Add Pill</string>
     

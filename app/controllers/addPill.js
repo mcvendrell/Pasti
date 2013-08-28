@@ -21,14 +21,9 @@ function setupPickerTextField(textField, pickerType, data) {
 	});
 };
 
-// Action when button back is clicked (Android only)
-function goBack() {
-	// Close this window
-	$.win.close();
-}
-
 // Action for the button
 function submitForm() {
+	// Get the form values
 	var name = $.txtName.value;
 	var days = $.txtDays.value;
 	if (OS_IOS) {
@@ -47,16 +42,10 @@ function submitForm() {
     } else {
     	// Save data
 		var db = require('db');
-		// Add will fire auto-refresh event inside
+		// Add function will fire auto-refresh event inside
 		db.addPill(name, start, days);			
     	
-		if (OS_IOS) {
-			// On iOS we are on a navBar
-	    	Alloy.Globals.navBar.close($.win);
-		} else {
-			// On Android we only opened a new window, just close it
-			$.win.close();
-		}
+    	Alloy.Globals.navBar.close($.win);
     };
 };
 

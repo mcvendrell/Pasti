@@ -17,6 +17,7 @@ exports.formatDate = function(myDate, model, sep) {
 
 	// Weekdays and days in words
 	var d_names = new Array(L("Sunday"), L("Monday"), L("Tuesday"), L("Wednesday"), L("Thursday"), L("Friday"), L("Saturday"));
+	var d_short_names = new Array(L("Sun"), L("Mon"), L("Tue"), L("Wed"), L("Thu"), L("Fri"), L("Sat"));
 	var m_names = new Array(L("January"), L("February"), L("March"), L("April"), L("May"), L("June"), 
 		L("July"), L("August"), L("September"), L("October"), L("November"), L("December"));
 	
@@ -40,10 +41,16 @@ exports.formatDate = function(myDate, model, sep) {
 		case 2: // standard dd/mm/yyyy hh:mi
 			retval = day + sep + month + sep + year + " " + hours + ":" + mins;
 			break;
-		case 3: // Weekd, dd mmmm
+		case 3: // Weekd (shorten), dd mmmm
+			retval = d_short_names[weekday] + ", " + day + " " + m_names[month-1];
+			break;
+		case 4: // Weekd, dd mmmm
 			retval = d_names[weekday] + ", " + day + " " + m_names[month-1];
 			break;
-		case 4: // Weekd, dd mmmm yyyy
+		case 5: // Weekd (shorten), dd mmmm yyyy
+			retval = d_short_names[weekday] + ", " + day + " " + m_names[month-1] + " " + year;
+			break;
+		case 6: // Weekd, dd mmmm yyyy
 			retval = d_names[weekday] + ", " + day + " " + m_names[month-1] + " " + year;
 			break;
 	}

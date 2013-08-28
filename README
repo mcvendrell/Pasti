@@ -26,7 +26,7 @@ Codestrong!
 ----------------------------------
 Now, the purpose of the program.
 
-I must take some different pills on my current life, but not daily, one can be taken every 2 days, other can be every 3 days, etc. Usually I remember it, because is every 2 days, but sometimes I forget if I took the pill yesterday. Then I need a way to remember it.
+I must take some different pills on my current life, but not daily, one can be taken every 2 days, other can be every 3 days, etc. Usually I remember it, because it is every 2 days, but sometimes I forget if I took the pill yesterday. Then I need a way to remember it.
 
 This is the purpose of the program, to view easily if I need to take my pill today or not. Or for various pills.
 
@@ -38,8 +38,12 @@ With all this in mind, the plan is:
 - An screen to add the new pills with a back button (on iOS, the navBar makes the button automatically).
 - An screen to show the current week for the selected pill in which the user can edit the pill data.
 
-Those simple 3 screens have enought work to learn a lot of basic concepts for Alloy framework (there is not too much Alloy examples out there because Alloy is relatively new) 
+Those simple 3 screens have enough work to learn a lot of basic concepts for Alloy framework (there is not too much Alloy examples out there because Alloy is relatively new) 
 
+----------------------------------
+License:
+
+I'm using the MIT license, which I find free enough with only the need of attribution to the autor.
 
 ----------------------------------
 Stuff our legal folk make us say:

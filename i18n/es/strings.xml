@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="general_info">¿Te tienes que tomar una medicina cada ciertos días y nunca recuerdas si te toca hoy?
-
-Pasti te ayuda a recordar qué días de la semana te toca tomar tu medicina. Solo tienes que indicar qué día empezaste a tomar la medicina y cada cuántos días tienes que tomarla y ¡ya está!
-No se añaden datos al calendario ni a los recordatorios, es una aplicación solo para consulta.
-
-Creada por Manuel Conde Vendrell para su propio uso, pero quizá pueda ayudarte.</string>
+    <string name="general_info">¿Te tienes que tomar una medicina cada ciertos días y nunca recuerdas si te toca hoy?\n\nPasti te ayuda a recordar qué días de la semana te toca tomar tu medicina. Solo tienes que indicar qué día empezaste a tomar la medicina y cada cuántos días tienes que tomarla y ¡ya está!\nNo se añaden datos al calendario ni a los recordatorios, es una aplicación solo para consulta.\n\nCreada por Manuel Conde Vendrell para su propio uso, pero quizá pueda ayudarte.</string>
     <string name="Your_pills">Tus pastillas</string>
     <string name="add_pill">Añadir Pastilla</string>
     

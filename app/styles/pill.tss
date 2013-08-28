@@ -14,7 +14,7 @@
 },
 ".stepper[platform=android]": {
 	width: 50,
-	height: 40,
+	height: 38,
   	borderRadius: 0,
   	borderWidth: 0
 },

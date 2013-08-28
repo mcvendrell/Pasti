@@ -19,12 +19,12 @@ exports.createNavigatorGroup = function() {
             }
         };
 
-        me.setRightButton = function(win, button) {
-            win.setRightNavButton(button);
-        };
-
         me.setLeftButton = function(win, button) {
             win.setLeftNavButton(button);
+        };
+
+        me.setRightButton = function(win, button) {
+            win.setRightNavButton(button);
         };
 
         me.close = function(win) {
@@ -96,9 +96,16 @@ exports.createNavigatorGroup = function() {
         };
 
 		// Helper to add a left button
-        me.addLeftButton = function(win, button) {
-            button.top = 5;
-            button.left = 5;
+        me.setLeftButton = function(win, button) {
+        	if (button.width <= 30 && button.height <= 30) {
+        		// Smaller special button, like info button
+	            button.top = 8;
+	            button.left = 8;
+	            button.font = {	fontFamily: "monospace", fontSize: 14 };
+        	} else {
+	            button.top = 5;
+	            button.left = 5;
+        	}
             navView.add(button);
         };
  

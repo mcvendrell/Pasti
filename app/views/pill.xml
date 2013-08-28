@@ -4,7 +4,7 @@
         <Button class="stepper" id="btnSubFirst" onClick="changeFirstDay" title="-" top="10" left="205" />
         <Button class="stepper" id="btnAddFirst" onClick="changeFirstDay" title="+" top="10" left="255" />
         
-        <Picker id="dtPicker" top="50" selectionIndicator="true" type="Ti.UI.PICKER_TYPE_DATE" onChange="changeFirstDay"></Picker>
+        <Picker id="dtPicker" top="50" selectionIndicator="true" type="Ti.UI.PICKER_TYPE_DATE" onChange="changeFirstDay" />
         
 		<Label id="intakeDays" top="279" left="40" text="L('days_for_next_take')" />
 		<Label id="days" top="285" left="165" />
@@ -22,16 +22,17 @@
 		<Label class="weekDay" id="Sat" left="229" text="L('Sat')" />
 		<Label class="weekDay" id="Sun" left="274" text="L('Sun')" />
 	</Window>
+	
 	<Window id="winPill" class="container" platform="android">
-        <Picker id="datePicker" top="100" selectionIndicator="true" type="Ti.UI.PICKER_TYPE_DATE"></Picker>
+        <Picker id="dtPicker" top="100" type="Ti.UI.PICKER_TYPE_DATE" onChange="changeFirstDay" />
         
-		<Label id="intakeDays" top="259" left="40" text="L('days_for_next_take')" />
+		<Label id="intakeDays" top="264" left="40" text="L('days_for_next_take')" />
 		<Label id="days" top="265" left="165" />
-        <Button class="stepper" id="buttonMinus2" onClick="substractDays" title="-" top="265" left="205" />
-        <Button class="stepper" id="buttonPlus2" onClick="addDays" title="+" top="265" left="255" />
+        <Button class="stepper" id="btnSubDay" onClick="changeInterval" title="-" top="265" left="205" />
+        <Button class="stepper" id="btnAddDay" onClick="changeInterval" title="+" top="265" left="255" />
         
 		<Label id="todayDate" top="312" left="5" />
-		<Label id="isDay" top="305" left="196" />
+		<Label id="isDay" top="307" left="196" />
 		
 		<Label class="weekDay" id="Mon" left="4" text="L('Mon')" />
 		<Label class="weekDay" id="Tue" left="49" text="L('Tue')" />

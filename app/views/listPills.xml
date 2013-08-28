@@ -1,5 +1,8 @@
 <Alloy>
-	<TableView id="table">
+	<TableView id="table" platform="ios">
+	
+	</TableView>
+	<TableView id="table" top="44" platform="android">
 	
 	</TableView>
 </Alloy>
