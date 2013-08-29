@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="winPill" class="container" platform="ios">
+	<Window id="winPill" class="container" onClose="closeCheck" platform="ios">
 		<Label id="firstDate" top="14" left="20" text="L('first_day_take')" />
         <Button class="stepper" id="btnSubFirst" onClick="changeFirstDay" title="-" top="10" left="205" />
         <Button class="stepper" id="btnAddFirst" onClick="changeFirstDay" title="+" top="10" left="255" />
@@ -23,7 +23,7 @@
 		<Label class="weekDay" id="Sun" left="274" text="L('Sun')" />
 	</Window>
 	
-	<Window id="winPill" class="container" platform="android">
+	<Window id="winPill" class="container" onClose="closeCheck" platform="android">
         <Picker id="dtPicker" top="100" type="Ti.UI.PICKER_TYPE_DATE" onChange="changeFirstDay" />
         
 		<Label id="intakeDays" top="264" left="40" text="L('days_for_next_take')" />

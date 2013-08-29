@@ -1,16 +1,18 @@
 // Get the args
 var args = arguments[0] || {};
 
-Ti.API.info('First: ' + args.first);
 var util = require('util');
 var firstDay = util.stringToDate(args.first);
 var intervalDays = parseInt(args.interval);
 var today = new Date();
-
+// This var tell us if we are closing the window because we clicked delete button
+// It is used in the close check
+var closeByDelete = false;
 
 // Add a the delete button
 var btnDel = Ti.UI.createButton({
-	title: "Delete"
+	id: "btnDelete",
+	title: L("delete")
 });
 Alloy.Globals.navBar.setRightButton($.winPill, btnDel);
 
@@ -20,9 +22,51 @@ btnDel.addEventListener('click', function() {
 	var db = require('db');
 	db.delPill(args.id);
 	// Autoclose this win
+	closeByDelete = true;
 	Alloy.Globals.navBar.close($.winPill);
 });
 
+// Add detection of back button, to save actual values (user could change it)
+//$.winPill.addEventListener('android:back', function(e) {
+//    Ti.API.info("Log: The Android back button was pressed - DO SOMETHING!!!!");
+//});
+
+// When closing the window (can be with back button or Delete button), check for 
+// new values to save or not (user could change values while consulting)
+function closeCheck(e) {
+	if (!closeByDelete) {
+		var db = require('db');
+		var id = parseInt(args.id);
+		// Any change detected?
+		var changes = false;
+		
+		Ti.API.info("Exiting by back button. Checking value changes...");
+		
+		// Check for changes on first date
+		if (util.dateToString(firstDay) != (args.first)) {
+			var ut = require('util');
+			start = ut.dateToString(firstDay);
+
+			Ti.API.info("Updating first_take...");
+			db.updatePill(id, "first_take", start, false);
+			changes = true;
+		}
+		// Check for changes on Interval
+		if (intervalDays != parseInt(args.interval)) {
+			Ti.API.info("Updating interval...");
+			db.updatePill(id, "interval", intervalDays, false);
+			changes = true;
+		}
+		// Any change? Then update the tableview
+		if (changes){
+			Ti.App.fireEvent("app:dbUpdated");
+		} else {
+			Ti.API.info("No changes.");
+		}
+	}
+	
+	Ti.App.removeEventListener('resume', resumeResponse);
+}
 
 // Change the first day (from stepper buttons or in the picker directly)
 function changeFirstDay(e) {
@@ -102,6 +146,7 @@ $.dtPicker.value = firstDay;
 $.days.text = intervalDays;
 
 // Set other fixed values:
+$.dtPicker.locale = Titanium.Platform.locale;
 // Today
 $.todayDate.text = L("today_is") + ': ' + util.formatDate(today, 3);
 
@@ -111,3 +156,20 @@ var Brain = require('pastiBrain').Brain,
 
 // Configure the rest of the interface
 refreshInterface();
+
+
+function resumeResponse(e) {
+	Ti.API.info("RESUMED on pill");
+	//Ti.App.fireEvent("app:dbUpdated");
+	refreshInterface();
+}
+
+Titanium.App.addEventListener('resume', resumeResponse);
+if(Titanium.Platform.name == 'iPhone OS'){
+	// Add the action to the delete button
+	//Titanium.App.addEventListener('significanttimechange', function() {
+		//Ti.API.info('Day change');
+		//Ti.App.fireEvent("app:dbUpdated");
+		//refreshInterface();
+	//});
+}

@@ -38,6 +38,7 @@ exports.semiModalPicker = function(o) {
 			picker.add(Ti.UI.createPickerRow({title:o.data[i]}));	
 		}
 	}
+	picker.locale = Titanium.Platform.locale;
 	picker.addEventListener('change', function(e) {});
 
 	var cancel = Titanium.UI.createButton({

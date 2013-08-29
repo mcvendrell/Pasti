@@ -3,6 +3,8 @@
     <string name="general_info">Do you have to take a medicine every N days and never remember if it is today?\n\nPasti helps you to remember which week days you must to take your medicine. Just indicate what day you started taking the medicine and every how many days you have to take it, and you are done!\nNo data is added to the calendar or reminders, is an application for consultation only.\n\nCreated by Manuel Conde Vendrell for his own purposes, but maybe can help you.</string>
     <string name="your_pills">Your Pills</string>
     <string name="add_pill">Add Pill</string>
+    <string name="YES">YES</string>
+    <string name="NO">NO</string>
     
     <string name="back">Back</string>
     <string name="pill_name">Pill name</string>
@@ -11,6 +13,7 @@
     <string name="add">Add</string>
     <string name="fill_all_fields">Please fill in all fields.</string>
     
+	<string name="delete">Delete</string>
     <string name="first_day_take">First date in take</string>
     <string name="days_for_next_take">Days for the next in take</string>
 	<string name="today_is">Today</string>

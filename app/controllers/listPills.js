@@ -1,13 +1,19 @@
 // Read data from the db and put it on the tableView
 function populateData() {
 	var db = require('db');
-	var data = db.getPills();			
+	//var data = db.getPills();
+	var data = db.getPillsWithStatus();
 	$.table.setData(data);
 }
 
 // Add a new custom event to refresh the data on the table
 // Will be triggered by any other controller just calling Ti.App.fireEvent
-Ti.App.addEventListener('dbUpdated', populateData);
+Ti.App.addEventListener('app:dbUpdated', populateData);
+
+Ti.App.addEventListener('resume', function(e) {
+	Ti.API.info("RESUMED on list");
+	Ti.App.fireEvent("app:dbUpdated");
+});
 
 // Add a click event to the rows
 $.table.addEventListener('click', function(e) {

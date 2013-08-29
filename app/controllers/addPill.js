@@ -31,7 +31,7 @@ function submitForm() {
 	} else {
 		var start = $.pikStart.value;
 		if (start != '') {
-			ut = require('util');
+			var ut = require('util');
 			start = ut.dateToString(start);
 		}
 	}
@@ -43,7 +43,7 @@ function submitForm() {
     	// Save data
 		var db = require('db');
 		// Add function will fire auto-refresh event inside
-		db.addPill(name, start, days);			
+		db.addPill(name, start, parseInt(days));			
     	
     	Alloy.Globals.navBar.close($.win);
     };

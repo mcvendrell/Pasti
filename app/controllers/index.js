@@ -26,6 +26,7 @@ if (OS_IOS) {
 		title: "i",
 		width: 30,
 		height: 30,
+		color: 'white',
 		borderRadius: 15,
 	    borderWidth: 0,
 	    borderColor: '#FFF',
@@ -36,6 +37,7 @@ if (OS_IOS) {
 	    }
 	});
 	var btnAdd = Ti.UI.createButton({
+		width: 40,
 		title: "+"
 	});
 }
