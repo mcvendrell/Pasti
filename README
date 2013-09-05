@@ -20,6 +20,9 @@ Will cover the next aspects:
 	NavigationGroup (for iOS)
 	custom NavigationBar (for Android) inside a View
 	Forms (with different DatePicker for iOS and Android)
+- iOS/Android activity to manage pause/resume events
+- Daychange detection
+- Custom Android back button management to disable 
 
 Codestrong!
 

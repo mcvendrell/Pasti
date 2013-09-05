@@ -9,12 +9,12 @@ var today = new Date();
 // It is used in the close check
 var closeByDelete = false;
 
+// ====================================================
 // Add a the delete button
 var btnDel = Ti.UI.createButton({
 	id: "btnDelete",
 	title: L("delete")
 });
-Alloy.Globals.navBar.setRightButton($.winPill, btnDel);
 
 // Add the action to the delete button
 btnDel.addEventListener('click', function() {
@@ -26,11 +26,39 @@ btnDel.addEventListener('click', function() {
 	Alloy.Globals.navBar.close($.winPill);
 });
 
-// Add detection of back button, to save actual values (user could change it)
-//$.winPill.addEventListener('android:back', function(e) {
-//    Ti.API.info("Log: The Android back button was pressed - DO SOMETHING!!!!");
-//});
+// Add the button to the navBar
+Alloy.Globals.navBar.setRightButton($.winPill, btnDel);
 
+// ====================================================
+// Event to detect when the app comes from pause (backgrounded). Maybe the day has changed since 
+// the last activation, check it and refresh on this case
+function resumeResponsePill(e) {
+	Ti.API.info("RESUMED on pill");
+	refreshInterface();
+}
+// Add the listener to the system
+if (OS_ANDROID){
+    Ti.Android.currentActivity.addEventListener('resume', resumeResponsePill);   
+} else {
+	Ti.App.addEventListener('resume', resumeResponsePill);
+}
+
+// ====================================================
+if (OS_ANDROID){
+	// Event to close by code the window. We need to do this way so we can remove the event on window close
+	function closeWindowByBackButton(e) {
+		Alloy.Globals.navBar.close($.winPill);
+	}
+	// Add detection of back button for Android
+	// We need to close manually the window to avoid the back button
+	// to close all the program (because our controller is creating all
+	// the new windows without especifying win.navBarHidden, in order to allow
+	// the Android Activity to work properly)
+	// NOTE: manually detecting the back button press overrides its behavior, so nothing happens
+	$.winPill.addEventListener('android:back', closeWindowByBackButton);
+}
+
+// ====================================================
 // When closing the window (can be with back button or Delete button), check for 
 // new values to save or not (user could change values while consulting)
 function closeCheck(e) {
@@ -65,9 +93,16 @@ function closeCheck(e) {
 		}
 	}
 	
-	Ti.App.removeEventListener('resume', resumeResponse);
+	// Remove the events for this window, once they are not needed
+	if (OS_ANDROID){
+        Ti.Android.currentActivity.removeEventListener('resume', resumeResponsePill);
+        $.winPill.removeEventListener('android:back', closeWindowByBackButton);
+	} else {
+		Ti.App.removeEventListener('resume', resumeResponsePill);
+	}
 }
 
+// ====================================================
 // Change the first day (from stepper buttons or in the picker directly)
 function changeFirstDay(e) {
 	if (e.source.id == "btnSubFirst") {
@@ -111,6 +146,7 @@ function changeInterval(e) {
 	refreshInterface();
 }
 
+// ====================================================
 // Change the bgcolor and color of a label, depending if is active or not
 function setDayStatus(label, active) {
 	label.color = active ? "white" : "black";
@@ -140,6 +176,7 @@ function refreshInterface() {
 	setDayStatus($.Sun, brain.week[7]);
 }
 
+// ====================================================
 // Load the pill data to the UI elements
 $.winPill.title = args.name;
 $.dtPicker.value = firstDay;
@@ -156,20 +193,3 @@ var Brain = require('pastiBrain').Brain,
 
 // Configure the rest of the interface
 refreshInterface();
-
-
-function resumeResponse(e) {
-	Ti.API.info("RESUMED on pill");
-	//Ti.App.fireEvent("app:dbUpdated");
-	refreshInterface();
-}
-
-Titanium.App.addEventListener('resume', resumeResponse);
-if(Titanium.Platform.name == 'iPhone OS'){
-	// Add the action to the delete button
-	//Titanium.App.addEventListener('significanttimechange', function() {
-		//Ti.API.info('Day change');
-		//Ti.App.fireEvent("app:dbUpdated");
-		//refreshInterface();
-	//});
-}

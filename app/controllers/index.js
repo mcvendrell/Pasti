@@ -12,6 +12,7 @@ var nav = ui.createNavigatorGroup();
 
 Alloy.Globals.navBar = nav;
 
+// ====================================================
 if (OS_IOS) {
 	// Create the iOS buttons with the proper style
 	var btnInfo = Ti.UI.createButton({
@@ -41,11 +42,8 @@ if (OS_IOS) {
 		title: "+"
 	});
 }
-// Attach buttons to navBar
-nav.setLeftButton($.pillsList, btnInfo);
-nav.setRightButton($.pillsList, btnAdd);
 
-// Add the action to the buttons
+// Add the actions to the buttons
 btnInfo.addEventListener('click', function() {
 	// Show the info
 	//alert(L("general_info"));
@@ -62,4 +60,10 @@ btnAdd.addEventListener('click', function() {
 	nav.open(winAddPill, {animated: true});
 });
 
+// Attach buttons to the navBar
+nav.setLeftButton($.pillsList, btnInfo);
+nav.setRightButton($.pillsList, btnAdd);
+
+// ====================================================
+// Open the navBar
 nav.open($.pillsList);

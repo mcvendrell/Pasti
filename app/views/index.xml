@@ -1,5 +1,5 @@
 <Alloy>
-    <Window id="pillsList" class="container" title="L('your_pills')">
+    <Window id="pillsList" class="container" title="L('your_pills')" exitOnClose="true">
 		<View id="listContainer">
 		    <Require src="listPills" />
 	    </View>
