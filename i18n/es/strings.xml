@@ -6,6 +6,9 @@
     <string name="YES">SI</string>
     <string name="NO">NO</string>
     
+    <string name="cancel">Cancelar</string>
+    <string name="done">Aceptar</string>
+    
     <string name="back">Volver</string>
     <string name="pill_name">Nombre</string>
     <string name="days">Días</string>

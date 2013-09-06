@@ -42,7 +42,7 @@ exports.semiModalPicker = function(o) {
 	picker.addEventListener('change', function(e) {});
 
 	var cancel = Titanium.UI.createButton({
-		title:'Cancel',
+		title: L('cancel', 'Cancel'),
 		height: 30,
 		width: 80,
 		style: Titanium.UI.iPhone.SystemButtonStyle.BORDERED,
@@ -53,7 +53,7 @@ exports.semiModalPicker = function(o) {
 	});
 
 	var done = Titanium.UI.createButton({
-		title:'Done',
+		title: L('done', 'Done'),
 		height: 30,
 		width: 80,
 		style:Titanium.UI.iPhone.SystemButtonStyle.BORDERED,
