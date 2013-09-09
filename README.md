@@ -1,5 +1,4 @@
-Personal project PASTI by Manuel Conde Vendrell
-===============================================
+##Personal project PASTI by Manuel Conde Vendrell
 
 This project is done to learn programming on Titanium/Appcelerator with the new Alloy MVC framework.
 It's done actually with Titanium 3.1.2 and Alloy 1.2.0 versions.
@@ -16,18 +15,18 @@ Will cover the next aspects:
 - Internacionalization (translation to EN and ES).
 - iOS / Android working versions. 
 - Use of the next "complex" components: 
-	TableView
+    TableView
 	NavigationGroup (for iOS)
 	custom NavigationBar (for Android) inside a View
 	Forms (with different DatePicker for iOS and Android)
-- iOS/Android activity to manage pause/resume events
-- Daychange detection
-- Custom Android back button management to disable 
+- iOS/Android activity to manage pause/resume events.
+- Daychange detection (using resume event to verify a date change).
+- Custom Android back button management to disable selfclose in a lightweigth window.
 
 Codestrong!
 
 ----------------------------------
-Now, the purpose of the program.
+####Now, the purpose of the program.
 
 I must take some different pills on my current life, but not daily, one can be taken every 2 days, other can be every 3 days, etc. Usually I remember it, because it is every 2 days, but sometimes I forget if I took the pill yesterday. Then I need a way to remember it.
 
@@ -44,12 +43,20 @@ With all this in mind, the plan is:
 Those simple 3 screens have enough work to learn a lot of basic concepts for Alloy framework (there is not too much Alloy examples out there because Alloy is relatively new) 
 
 ----------------------------------
-License:
+####Screenshots:
+![iPhone Main](http://)
+![iPhone Screen 1](http://)
+![iPhone Screen 2](http://)
+![Android Main](http://)
+![Android Screen 1](http://)
+![Android Screen 2](http://)
+----------------------------------
+####License:
 
 I'm using the MIT license, which I find free enough with only the need of attribution to the autor.
 
 ----------------------------------
-Stuff our legal folk make us say:
+####Stuff our legal folk make us say:
 
 Appcelerator, Appcelerator Titanium and associated marks and logos are 
 trademarks of Appcelerator, Inc. 
@@ -58,4 +65,3 @@ Titanium is Copyright (c) 2008-2013 by Appcelerator, Inc. All Rights Reserved.
 
 Titanium is licensed under the Apache Public License (Version 2). Please
 see the LICENSE file for the full license.
-
