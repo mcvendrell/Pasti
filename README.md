@@ -44,13 +44,13 @@ Those simple 3 screens have enough work to learn a lot of basic concepts for All
 
 ----------------------------------
 ####Screenshots:
-![iPhone Main](http://)
-![iPhone Screen 1](http://)
-![iPhone Screen 2](http://)
-![Android Main](http://)
-![Android Screen 1](http://)
-![Android Screen 2](http://)
-----------------------------------
+![iPhone Main](https://raw.github.com/mcvendrell/Pasti/master/screenshots/iPhone-Main.PNG)
+![Android Main](https://raw.github.com/mcvendrell/Pasti/master/screenshots/Android-Main.PNG)
+![iPhone Screen 1](https://raw.github.com/mcvendrell/Pasti/master/screenshots/iPhone-Add.PNG)
+![Android Screen 1](https://raw.github.com/mcvendrell/Pasti/master/screenshots/Android-Add.PNG)
+![iPhone Screen 2](https://raw.github.com/mcvendrell/Pasti/master/screenshots/iPhone-Pill.PNG)
+![Android Screen 2](https://raw.github.com/mcvendrell/Pasti/master/screenshots/Android-Pill.PNG)
+
 ####License:
 
 I'm using the MIT license, which I find free enough with only the need of attribution to the autor.
