@@ -6,4 +6,4 @@ tmp
 .map
 Resources/
 .fastdev.lock
-.prefs
+.settings/
