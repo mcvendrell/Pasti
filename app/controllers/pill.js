@@ -44,21 +44,6 @@ if (OS_ANDROID){
 }
 
 // ====================================================
-if (OS_ANDROID){
-	// Event to close by code the window. We need to do this way so we can remove the event on window close
-	function closeWindowByBackButton(e) {
-		Alloy.Globals.navBar.close($.winPill);
-	}
-	// Add detection of back button for Android
-	// We need to close manually the window to avoid the back button
-	// to close all the program (because our controller is creating all
-	// the new windows without especifying win.navBarHidden, in order to allow
-	// the Android Activity to work properly)
-	// NOTE: manually detecting the back button press overrides its behavior, so nothing happens
-	$.winPill.addEventListener('android:back', closeWindowByBackButton);
-}
-
-// ====================================================
 // When closing the window (can be with back button or Delete button), check for 
 // new values to save or not (user could change values while consulting)
 function closeCheck(e) {
@@ -96,7 +81,6 @@ function closeCheck(e) {
 	// Remove the events for this window, once they are not needed
 	if (OS_ANDROID){
         Ti.Android.currentActivity.removeEventListener('resume', resumeResponsePill);
-        $.winPill.removeEventListener('android:back', closeWindowByBackButton);
 	} else {
 		Ti.App.removeEventListener('resume', resumeResponsePill);
 	}
