@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.mcvendrell.pasti</id>
     <name>Pasti</name>
-    <version>1.1</version>
+    <version>1.2</version>
     <publisher>Manuel Conde Vendrell</publisher>
     <url>http://mcvendrell.com</url>
     <description>not specified</description>
@@ -49,7 +50,7 @@
         <target device="mobileweb">false</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>3.1.2.GA</sdk-version>
+    <sdk-version>3.1.3.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>

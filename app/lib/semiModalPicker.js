@@ -14,6 +14,7 @@ var dateToString = function(date) {
 exports.semiModalPicker = function(o) {
 	var type = o.type === undefined ? Ti.UI.PICKER_TYPE_PLAIN : o.type;
 	var modalWin = Ti.UI.createWindow({
+		top: 20,
 		backgroundColor: 'transparent'
 	});
 	var overlay = Ti.UI.createView({
@@ -75,7 +76,7 @@ exports.semiModalPicker = function(o) {
 
 	var toolbar = Ti.UI.createView({
 		height: 43,
-		backgroundColor: '#bbb'
+		backgroundColor: '#DCDCDC'
 	});
 
 	toolbar.add(cancel);

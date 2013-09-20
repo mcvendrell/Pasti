@@ -14,9 +14,11 @@
 Alloy.Globals.dbname = "pastis";
 
 // Colors for Style Sheets
-Alloy.Globals.winBgColor = "#DDD";
-Alloy.Globals.navBgColor = "#BBB";
+Alloy.Globals.winBgColor = "white";
+//Alloy.Globals.navBgColor = "#BBB";
+Alloy.Globals.navBgColor = "#DCDCDC";
 Alloy.Globals.navTitleColor = "black";
-Alloy.Globals.blueColor = "#2E2EFE";
-Alloy.Globals.greyColor = "#BBB";
+Alloy.Globals.blueColor = "#047CFF";
+//Alloy.Globals.blueColor = "#2E2EFE";
+Alloy.Globals.greyColor = "#DCDCDC";
 Alloy.Globals.formLabelColor = "#555";

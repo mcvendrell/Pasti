@@ -8,7 +8,7 @@
 // Use our own navigator for iOS and Android, in order to use, for iOS, the
 // native NavigationGroup, and for Android, a custom Navigation controller
 var ui = require('navigation');
-var nav = ui.createNavigatorGroup();
+var nav = ui.createNavigatorGroup($.pillsList);
 
 Alloy.Globals.navBar = nav;
 
@@ -65,5 +65,7 @@ nav.setLeftButton($.pillsList, btnInfo);
 nav.setRightButton($.pillsList, btnAdd);
 
 // ====================================================
-// Open the navBar
-nav.open($.pillsList);
+// Open the navBar, for Android only (on iOS7 is opened in the creation of nav)
+if (OS_ANDROID) {
+	nav.open($.pillsList);
+}
