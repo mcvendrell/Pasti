@@ -1,7 +1,8 @@
 ##Personal project PASTI by Manuel Conde Vendrell
 
 This project is done to learn programming on Titanium/Appcelerator with the new Alloy MVC framework.
-It's done actually with Titanium 3.1.2 and Alloy 1.2.0 versions.
+It's done actually with Titanium 3.1.3 and Alloy 1.2.2 versions 
+This branch is done for iOS 7 version (and also Android 2.2+).
 
 Since Alloy 1.2.0 version, you can now use L() for internacionalization also in the XML code (before, only on JS and TSS code)  
 
