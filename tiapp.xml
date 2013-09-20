@@ -29,7 +29,7 @@
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest android:versionCode="112" android:versionName="1.1.2">
+        <manifest android:versionCode="120" android:versionName="1.2.0">
             <supports-screens android:anyDensity="false"/>
         </manifest>
     </android>
