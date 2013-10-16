@@ -54,6 +54,8 @@ Those simple 3 screens have enough work to learn a lot of basic concepts for All
 ####License:
 
 I'm using the MIT license, which I find free enough with only the need of attribution to the autor.
+This app is approved and published on the Apple Store and Google Play Store on Sep 24, 2013 and it is forbidden to publish it again using this source code.
+This source code is only for learning purposes.
 
 ----------------------------------
 ####Stuff our legal folk make us say:
