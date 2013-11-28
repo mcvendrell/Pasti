@@ -43,5 +43,5 @@
 	keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
 },
 "#txtStart": {
-	width: 100
+	width: 110
 }
