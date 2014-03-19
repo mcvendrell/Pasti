@@ -45,12 +45,12 @@ Those simple 3 screens have enough work to learn a lot of basic concepts for All
 
 ----------------------------------
 ####Screenshots:
-![iPhone Main](https://raw.github.com/mcvendrell/Pasti/master/screenshots/iPhone-Main.PNG)
-![Android Main](https://raw.github.com/mcvendrell/Pasti/master/screenshots/Android-Main.PNG)
-![iPhone Screen 1](https://raw.github.com/mcvendrell/Pasti/master/screenshots/iPhone-Add.PNG)
-![Android Screen 1](https://raw.github.com/mcvendrell/Pasti/master/screenshots/Android-Add.PNG)
-![iPhone Screen 2](https://raw.github.com/mcvendrell/Pasti/master/screenshots/iPhone-Pill.PNG)
-![Android Screen 2](https://raw.github.com/mcvendrell/Pasti/master/screenshots/Android-Pill.PNG)
+![iPhone Main](https://raw.github.com/mcvendrell/Pasti/iOS7/screenshots/iOS7-Main.png)
+![Android Main](https://raw.github.com/mcvendrell/Pasti/iOS7/screenshots/Android-Main.PNG)
+![iPhone Screen 1](https://raw.github.com/mcvendrell/Pasti/iOS7/screenshots/iOS7-Add.png)
+![Android Screen 1](https://raw.github.com/mcvendrell/Pasti/iOS7/screenshots/Android-Add.PNG)
+![iPhone Screen 2](https://raw.github.com/mcvendrell/Pasti/iOS7/screenshots/iOS7-Pill.png)
+![Android Screen 2](https://raw.github.com/mcvendrell/Pasti/iOS7/screenshots/Android-Pill.PNG)
 
 ####License:
 
